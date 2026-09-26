@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp 4</title>
+</head>
+<body>
+    <input id="a" type="text" placeholder="Enter A">
+    <input id="b" type="text" placeholder="Enter B">
+    <p id="res">Output here</p>
+    <button id="btn1">Add</button>
+    <script>
+        document.getElementById("btn1").addEventListener('click',
+        function(){
+            let a=Number(document.getAnimations("a").value);
+            let b=documentgetElementById("b").value;
+            let c=a + b;
+            document.getElementById("res").innerHTML=c;
+        });
+    </script>
+</body>
+</html>

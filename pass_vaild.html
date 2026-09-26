@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp 6</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="pass" placeholder="Enter Password">
+    <div id="vaild" style="display: none;">
+        <p id="pass_len">Minimum 8 Character</p>
+        <p id="pass_upper">Minimum one Upper Case</p>
+        <p id="pass_lower">Minimum one lower case</p>
+        <p id="pass_number">Minimum one number</p>
+    </div>
+    <script>
+        document.getElementById("pass").addEventListener('keyup',function(){
+            let pass_length=document.getElementById("pass").value.length;
+            if(pass_length>0){
+                document.getElementById("vaild").style.display="block";
+            }else{
+                document.getElementById("vaild").style.display="none";
+            }
+            //Minimum 8 characters
+            if(pass_length>=8){
+                document.getElementById("pass_len").style.color="green";
+            } else{
+                document.getElementById("pass_len").style.color="red";
+            }
+            //one Upper case
+            let password = document.getElementById("pass").value;
+            if(/[A-Z]/.test(password)){
+                document.getElementById("pass_upper").style.color="green";
+
+            } else{
+                document.getElementById("pass_upper").style.color="red";
+            }
+            if(/[a-z]/.test(password)){
+                document.getElementById("pass_lower").style.color="green";
+
+            } else{
+                document.getElementById("pass_lower").style.color="red";
+            }
+            if(/[0-9]/.test(password)){
+                document.getElementById("pass_number").style.color="green";
+
+            } else{
+                document.getElementById("pass_number").style.color="red";
+            }
+        })
+    </script>
+</body>
+</html>

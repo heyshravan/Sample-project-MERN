@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp 6</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="pan" placeholder="Enter PAN card number">
+    <p id="b"></p>
+    <script>
+        document.getElementById("pan").addEventListener('keyup',function(){
+        let name=document.getElementById("pan").value;
+        document.getElementById("b").innerHTML=name.toUpperCase();
+        })
+        let pattern=/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/
+
+        if(pattern.test(pan)){
+            document.getElementById("b").style.color="green";
+        } else{
+            document.getElementById("b").style.color='red';
+        }
+    </script>
+</body>
+</html>
